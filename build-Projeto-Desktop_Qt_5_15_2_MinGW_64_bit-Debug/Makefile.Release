@@ -55,8 +55,7 @@ SOURCES       = ..\Projeto\main.cpp \
 OBJECTS       = release/main.o \
 		release/sculptor.o
 
-DIST          =  Voxel.h \
-		sculptor.h ..\Projeto\main.cpp \
+DIST          =  sculptor.h ..\Projeto\main.cpp \
 		..\Projeto\sculptor.cpp
 QMAKE_TARGET  = Projeto
 DESTDIR        = release\ #avoid trailing-slash linebreak
@@ -105,12 +104,10 @@ compiler_clean:
 
 ####### Compile
 
-release/main.o: ../Projeto/main.cpp ../Projeto/sculptor.h \
-		../Projeto/Voxel.h
+release/main.o: ../Projeto/main.cpp ../Projeto/sculptor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\Projeto\main.cpp
 
-release/sculptor.o: ../Projeto/sculptor.cpp ../Projeto/sculptor.h \
-		../Projeto/Voxel.h
+release/sculptor.o: ../Projeto/sculptor.cpp ../Projeto/sculptor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\sculptor.o ..\Projeto\sculptor.cpp
 
 ####### Install
